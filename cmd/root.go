@@ -129,7 +129,7 @@ func extractResourceAction(line string) (string, string) {
 
 	resource := string(match[1])
 	action := string(match[2])
-	if !slices.Contains(defaultActionPattern, action) {
+	if slices.Contains(defaultActionPattern, action) {
 		return resource, action
 	}
 
